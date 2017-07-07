@@ -1,6 +1,9 @@
+/** Classe di Supporto per l'analisi di **/
+/** LOG APACHE                          **/
+
 package com.sysman.scala
 import scala.io.Source
-/** An entry of Apache access log. */
+
 case class ApacheAccessLog(ipAddress: String,
   clientIdentd: String,
   userId: String,
