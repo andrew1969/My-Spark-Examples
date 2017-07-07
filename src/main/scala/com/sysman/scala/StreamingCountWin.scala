@@ -1,3 +1,6 @@
+/** Conteggio in Spark Streaming delle occorrenze di un log APACHE            **/
+/** versione "Windowed"                                                       **/
+
 package com.sysman.scala
 
 import org.apache.spark.SparkContext
