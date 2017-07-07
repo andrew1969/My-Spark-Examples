@@ -1,5 +1,5 @@
-/** Contenggio in Saprk Streaming delle occorrenze di un log APACHE contenenti **/
-/** lo stesso indirizzo IP. Versione StateFull                                 **/
+/** Contenggio in Saprk Streaming delle occorrenze di un log APACHE            **/
+/**  Versione StateFull. Conteggio per Response Code                           **/
 /** Learning Spark pp 196 - 197                                                **/
 
 package com.sysman.scala
