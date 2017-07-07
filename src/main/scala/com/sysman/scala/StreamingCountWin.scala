@@ -1,5 +1,6 @@
 /** Conteggio in Spark Streaming delle occorrenze di un log APACHE            **/
 /** versione "Windowed"                                                       **/
+/** Learning Spark pp 193 - 194                                               **/
 
 package com.sysman.scala
 
