@@ -1,5 +1,6 @@
 /** Contenggio in Saprk Streaming delle occorrenze di un log APACHE contenenti **/
-/** lo stesso indirizzo IP                                                     **/
+/** lo stesso indirizzo IP. Versione Stateless                                 **/
+/** Learning Spark pp 190 - 191                                                **/
 
 package com.sysman.scala
 
