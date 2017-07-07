@@ -1,3 +1,6 @@
+/** Contenggio in Saprk Streaming delle occorrenze di un log APACHE contenenti **/
+/** lo stesso indirizzo IP.            Versione Incrementale                   **/
+
 package com.sysman.scala
 
 import org.apache.spark.SparkContext
@@ -21,8 +24,10 @@ object StreamingCountInc {
     val logData = ssc.textFileStream(logDirectory)
     val accessLogDStream = logData.map(line => ApacheAccessLog.parseLogLine(line))
     val ipDStream = accessLogDStream.map(logEntry => (logEntry.getIpAddress(), 1))
+    
+    // il conteggio avviene non sulla singola window ma su quelle rientranti nella finestra di esecuzione
     val ipCountDStream = ipDStream.reduceByKeyAndWindow(
-                        {(x,y) => x + y}, //Addiziona i batch che entrano nella finestra di esecuzione
+                        {(x,y) => x + y}, //Elabora i batch che entrano nella finestra di esecuzione
                         {(x,y) => x - y}, //Rimuove gli elementi del più vecchio batch uscente dalla finestra di esecuzione                                )
                         Seconds(30),      //Durata della finestra di esecuzione
                         Seconds(10))     //Durata dello Slide.
